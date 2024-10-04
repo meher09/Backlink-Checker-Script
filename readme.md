@@ -29,7 +29,7 @@ You need the following Python libraries to run the script:
 Install the required dependencies by running the following command:
 
 ```bash
-pip install aiohttp pandas
+pip install aiohttp pandas requests
 ```
 ### Step 2: Prepare your CSV file
 
