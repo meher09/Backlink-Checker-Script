@@ -43,8 +43,7 @@ def update_csv_with_results(csv_file, domain):
     df = pd.read_csv(csv_file)
     current_date = datetime.now().strftime('%Y-%m-%d')  # Get current date as column name
     
-    loop = asyncio.get_event_loop()
-    results = loop.run_until_complete(check_backlinks(df, domain))
+    results = asyncio.run(check_backlinks(df, domain))  # Use asyncio.run
     
     df[current_date] = results
     df.to_csv(csv_file, index=False)
